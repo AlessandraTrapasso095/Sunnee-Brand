@@ -1,8 +1,8 @@
-<!-- questo file mi serve per mostrare la pagina finale di ringraziamento dopo l'invio del configuratore. -->
+<!-- mostra la pagina finale di ringraziamento dopo l'invio del configuratore -->
 <script setup>
 import thermosPhoto from '../assets/images/thermos-photo.png'
 
-// questo blocco mi serve per elencare i prossimi passaggi in modo chiaro e riusabile.
+// elenca i prossimi passaggi
 const nextSteps = [
   'La configurazione e stata registrata correttamente.',
   'Riceverai una conferma con i dettagli della personalizzazione.',
@@ -11,12 +11,12 @@ const nextSteps = [
 </script>
 
 <template>
-  <!-- questo blocco mi serve per centrare il contenuto della pagina di conferma. -->
+  <!-- centra il contenuto della pagina di conferma -->
   <main class="thankyou-page">
-    <!-- questo blocco mi serve per contenere titolo, testo e azioni finali in un layout pulito. -->
+    <!-- contiene titolo, testo e azioni finali -->
     <section class="thankyou-card">
       <div class="thankyou-layout">
-        <!-- questo blocco mi serve per mostrare testo, lista passaggi e pulsanti principali. -->
+        <!-- mostra testo, lista passaggi e pulsanti principali -->
         <div class="thankyou-copy">
           <p class="thankyou-kicker">Grazie</p>
           <h1>Configurazione inviata con successo</h1>
@@ -24,12 +24,12 @@ const nextSteps = [
             Abbiamo ricevuto la tua bottiglia termica personalizzata Sunnee.
           </p>
 
-          <!-- questo blocco mi serve per riepilogare cosa succede dopo l'invio. -->
+          <!-- riepilogo di cosa succede dopo l'invio -->
           <ul class="thankyou-list">
             <li v-for="item in nextSteps" :key="item">{{ item }}</li>
           </ul>
 
-          <!-- questo blocco mi serve per offrire due azioni chiare all'utente. -->
+          <!-- per offrire due azioni chiare all'utente -->
           <div class="thankyou-actions">
             <RouterLink class="sunnee-button" to="/">Torna alla home</RouterLink>
             <RouterLink class="thankyou-button-secondary" to="/configuratore">
@@ -38,7 +38,6 @@ const nextSteps = [
           </div>
         </div>
 
-        <!-- questo blocco mi serve per dare continuita visiva con il prodotto configurato. -->
         <aside class="thankyou-visual" aria-label="Bottiglia Sunnee">
           <span class="visual-orb visual-orb--warm"></span>
           <span class="visual-orb visual-orb--cool"></span>
@@ -267,6 +266,50 @@ h1 {
 
   .thankyou-actions .thankyou-button-secondary {
     width: 100%;
+  }
+}
+
+@media (max-width: 520px) {
+  .thankyou-page {
+    padding: 0.65rem;
+  }
+
+  .thankyou-card {
+    border-radius: 18px;
+    padding: 0.82rem 0.72rem;
+  }
+
+  .thankyou-kicker {
+    font-size: 0.66rem;
+  }
+
+  h1 {
+    font-size: clamp(1.26rem, 7vw, 1.62rem);
+  }
+
+  .thankyou-lead {
+    margin-top: 0.42rem;
+    font-size: 0.9rem;
+  }
+
+  .thankyou-list li {
+    font-size: 0.84rem;
+    padding: 0.52rem 0.62rem 0.52rem 1.86rem;
+  }
+
+  .thankyou-visual {
+    min-height: 244px;
+    border-radius: 16px;
+  }
+
+  .visual-bottle img {
+    width: min(210px, 76%);
+  }
+
+  .visual-pill {
+    right: 0.72rem;
+    bottom: 0.72rem;
+    font-size: 0.72rem;
   }
 }
 </style>

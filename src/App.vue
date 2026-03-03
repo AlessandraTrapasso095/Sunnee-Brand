@@ -1,15 +1,15 @@
-<!-- questo file mi serve per gestire il layout globale con header, vista corrente e footer. -->
+<!-- gestione layout globale con header, vista corrente e footer -->
 <script setup>
 import sunneeLogo from './assets/images/sunnee-logo.svg'
 
-// questo blocco mi serve per mostrare l'anno corrente nel footer senza aggiornarlo a mano.
+// mostra l'anno corrente nel footer senza aggiornarlo a mano
 const currentYear = new Date().getFullYear()
 </script>
 
 <template>
-  <!-- questo blocco mi serve per contenere tutta l'app in un layout unico e riusabile. -->
+  <!-- contiene tutta l'app -->
   <div class="app-shell">
-    <!-- questo blocco mi serve per avere il brand sempre visibile e il link rapido alla home. -->
+    <!-- per avere il brand sempre visibile e con link alla home -->
     <header class="site-header">
       <RouterLink class="site-brand" to="/">
         <img class="site-brand__logo" :src="sunneeLogo" alt="" aria-hidden="true" />
@@ -18,12 +18,11 @@ const currentYear = new Date().getFullYear()
       <RouterLink class="site-home-link" to="/">Home</RouterLink>
     </header>
 
-    <!-- questo blocco mi serve per montare la pagina attiva del router. -->
     <div class="app-content">
       <RouterView />
     </div>
 
-    <!-- questo blocco mi serve per chiudere ogni pagina con un footer coerente. -->
+    <!-- chiude ogni pagina con il footer -->
     <footer class="site-footer">
       <div class="site-footer__content">
         <p>Sunnee {{ currentYear }}. Beachwear e accessori sostenibili.</p>
@@ -117,5 +116,40 @@ const currentYear = new Date().getFullYear()
   font-size: 0.76rem;
   font-weight: 600;
   letter-spacing: 0.02em;
+}
+
+@media (max-width: 760px) {
+  .site-header {
+    height: 58px;
+    padding: 0 0.78rem;
+  }
+
+  .site-brand {
+    font-size: 1.04rem;
+    gap: 0.4rem;
+  }
+
+  .site-brand__logo {
+    width: 34px;
+    height: 34px;
+  }
+
+  .site-home-link {
+    height: 1.9rem;
+    padding: 0 0.76rem;
+    font-size: 0.81rem;
+  }
+
+  .site-footer {
+    min-height: calc(40px + env(safe-area-inset-bottom));
+  }
+
+  .site-footer__content {
+    padding: 0 0.78rem;
+  }
+
+  .site-footer__content p {
+    font-size: 0.7rem;
+  }
 }
 </style>

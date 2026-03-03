@@ -1,8 +1,8 @@
-<!-- questo file mi serve per creare una welcome page full-page in stile landing moderna e raccontare la storia Sunnee. -->
+<!-- welcome page che racconta la storia Sunnee -->
 <script setup>
 import thermosPhoto from '../assets/images/thermos-photo.png'
 
-// questo blocco mi serve per riusare la stessa immagine bottiglia in piu versioni colore nella hero.
+// per riusare la stessa immagine bottiglia in piu versioni colore nella hero
 const showcaseBottles = [
   {
     id: 'ocean',
@@ -21,7 +21,7 @@ const showcaseBottles = [
   },
 ]
 
-// questo blocco mi serve per mostrare in modo DRY i punti chiave della proposta Sunnee.
+// mosrtra i punti chiave della proposta Sunnee
 const highlights = [
   {
     id: 'waste',
@@ -40,7 +40,7 @@ const highlights = [
   },
 ]
 
-// questo blocco mi serve per raccontare la storia Sunnee con una timeline semplice e leggibile.
+// racconta la storia Sunnee 
 const timeline = [
   {
     year: '2018',
@@ -58,9 +58,9 @@ const timeline = [
 </script>
 
 <template>
-  <!-- questo blocco mi serve per contenere tutta la landing page in sezioni full-width senza box. -->
+  <!-- contiene tutta la landing page in sezioni -->
   <main class="welcome-page">
-    <!-- questo blocco mi serve per la hero principale con headline, CTA e bottiglie in evidenza. -->
+    <!-- headline, CTA e bottiglie in evidenza -->
     <section class="hero">
       <div class="hero-copy">
         <p class="hero-kicker">Beachwear sostenibile made for ocean lovers</p>
@@ -82,7 +82,7 @@ const timeline = [
         </ul>
       </div>
 
-      <!-- questo blocco mi serve per mostrare 3 varianti bottiglia con luci/ombre in stile prodotto. -->
+      <!-- mostra 3 varianti bottiglia con luci/ombre in stile prodotto -->
       <div class="hero-visual" aria-label="Varianti bottiglia Sunnee">
         <span class="hero-orb hero-orb--warm"></span>
         <span class="hero-orb hero-orb--cool"></span>
@@ -98,7 +98,7 @@ const timeline = [
       </div>
     </section>
 
-    <!-- questo blocco mi serve per esporre i benefit principali su una fascia orizzontale pulita. -->
+    <!-- espone i benefit principali -->
     <section class="benefits" id="benefici">
       <p class="section-kicker">Perche Sunnee</p>
       <h2>Una visione chiara: innovare il beachwear partendo dal recupero del mare.</h2>
@@ -112,7 +112,7 @@ const timeline = [
       </ol>
     </section>
 
-    <!-- questo blocco mi serve per raccontare la storia del brand con un layout editoriale full-page. -->
+    <!-- racconta la storia del brand -->
     <section class="story" id="storia">
       <div class="story-media">
         <img :src="thermosPhoto" alt="Bottiglia termica Sunnee" />
@@ -136,7 +136,7 @@ const timeline = [
       </div>
     </section>
 
-    <!-- questo blocco mi serve per chiudere la landing con la CTA verso il configuratore kids. -->
+    <!-- chiude la landing con la CTA verso il configuratore kids -->
     <section class="kids-launch">
       <p class="section-kicker">Nuova linea Kids</p>
       <h2>Con il primo ordine, ogni bambina e bambino riceve una bottiglia termica custom Sunnee.</h2>

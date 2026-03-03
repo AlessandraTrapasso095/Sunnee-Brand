@@ -35,8 +35,20 @@ body {
     var(--sn-bg);
 }
 
+img,
+svg {
+  max-width: 100%;
+  height: auto;
+}
+
 #app {
   min-height: 100%;
+}
+
+@media (max-width: 640px) {
+  body {
+    -webkit-text-size-adjust: 100%;
+  }
 }
 
 .sunnee-button {
