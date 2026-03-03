@@ -1,0 +1,34 @@
+<svg width="512" height="512" viewBox="0 0 512 512" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="sunGradient" x1="160" y1="90" x2="352" y2="300" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#F6AA38" />
+      <stop offset="100%" stop-color="#FFC75A" />
+    </linearGradient>
+  </defs>
+  <circle cx="256" cy="220" r="136" fill="url(#sunGradient)" />
+  <path
+    d="M144 274C161 274 161 304 178 304C196 304 196 274 214 274C232 274 232 304 250 304C268 304 268 274 286 274C304 274 304 304 322 304C339 304 339 274 356 274V300H144V274Z"
+    fill="#F89A1A"
+  />
+  <path
+    d="M70 282C89 282 89 304 108 304C127 304 127 282 146 282C165 282 165 304 184 304C203 304 203 282 222 282C241 282 241 304 260 304C279 304 279 282 298 282C317 282 317 304 336 304C355 304 355 282 374 282C393 282 393 304 412 304C431 304 431 282 450 282"
+    stroke="#78BDF0"
+    stroke-width="16"
+    stroke-linecap="round"
+    stroke-linejoin="round"
+  />
+  <path
+    d="M104 350C121 350 121 372 138 372C155 372 155 350 172 350C189 350 189 372 206 372C223 372 223 350 240 350C257 350 257 372 274 372C291 372 291 350 308 350C325 350 325 372 342 372C359 372 359 350 376 350C393 350 393 372 410 372"
+    stroke="#78BDF0"
+    stroke-width="16"
+    stroke-linecap="round"
+    stroke-linejoin="round"
+  />
+  <path
+    d="M138 410C152 410 152 432 166 432C180 432 180 410 194 410C208 410 208 432 222 432C236 432 236 410 250 410C264 410 264 432 278 432C292 432 292 410 306 410C320 410 320 432 334 432C348 432 348 410 362 410C376 410 376 432 390 432"
+    stroke="#78BDF0"
+    stroke-width="16"
+    stroke-linecap="round"
+    stroke-linejoin="round"
+  />
+</svg>

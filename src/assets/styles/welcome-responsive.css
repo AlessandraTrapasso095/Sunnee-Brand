@@ -1,0 +1,73 @@
+@keyframes bottle-float {
+  0%,
+  100% {
+    transform: translateX(var(--bottle-offset-x)) translateY(var(--bottle-offset-y));
+  }
+  50% {
+    transform: translateX(var(--bottle-offset-x))
+      translateY(calc(var(--bottle-offset-y) - 8px));
+  }
+}
+
+@media (max-width: 1120px) {
+  .hero {
+    grid-template-columns: 1fr;
+  }
+
+  .hero-copy {
+    max-width: 100%;
+  }
+
+  .hero-visual {
+    min-height: clamp(430px, 56vh, 560px);
+  }
+
+  .benefit-track {
+    grid-template-columns: 1fr;
+  }
+
+  .story {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 760px) {
+  .hero {
+    padding-top: 2rem;
+  }
+
+  .hero-kicker {
+    max-width: 28ch;
+    line-height: 1.45;
+  }
+
+  h1 {
+    max-width: 12ch;
+  }
+
+  .hero-bottle--ocean {
+    width: 156px;
+    --bottle-offset-x: 16px;
+    --bottle-offset-y: -18px;
+  }
+
+  .hero-bottle--sunset {
+    width: 170px;
+    --bottle-offset-x: -14px;
+  }
+
+  .hero-bottle--mint {
+    width: 146px;
+    --bottle-offset-x: -26px;
+  }
+
+  .hero-bottle figcaption {
+    font-size: 0.72rem;
+    margin-top: 0.25rem;
+  }
+
+  .timeline li {
+    grid-template-columns: 1fr;
+    row-gap: 0.2rem;
+  }
+}

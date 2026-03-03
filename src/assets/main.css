@@ -1,35 +1,77 @@
-@import './base.css';
+:root {
+  --sn-bg: #ecf7fa;
+  --sn-text: #092f3e;
+  --sn-muted: #46626d;
+  --sn-accent: #0b88ad;
+  --sn-accent-dark: #086b89;
+  --sn-white: #ffffff;
+  --sn-border: rgba(8, 107, 137, 0.2);
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html,
+body,
+#app {
+  height: 100%;
+  min-height: 100%;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  min-height: 100dvh;
+  overflow-x: hidden;
+  overflow-y: auto;
+  font-family: 'Avenir Next', 'Segoe UI', system-ui, sans-serif;
+  color: var(--sn-text);
+  background:
+    radial-gradient(circle at 15% 20%, rgba(11, 136, 173, 0.16), transparent 45%),
+    radial-gradient(circle at 85% 0%, rgba(255, 255, 255, 0.9), transparent 30%),
+    var(--sn-bg);
+}
 
 #app {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
-  font-weight: normal;
+  min-height: 100%;
 }
 
-a,
-.green {
+.sunnee-button {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  border: 0;
+  border-radius: 999px;
+  padding: 0.85rem 1.4rem;
+  color: var(--sn-white);
   text-decoration: none;
-  color: hsla(160, 100%, 37%, 1);
-  transition: 0.4s;
-  padding: 3px;
+  background: linear-gradient(130deg, var(--sn-accent), var(--sn-accent-dark));
+  font-weight: 700;
+  cursor: pointer;
+  transition: transform 180ms ease, box-shadow 180ms ease, filter 180ms ease;
+  box-shadow: 0 14px 28px rgba(11, 136, 173, 0.35);
 }
 
-@media (hover: hover) {
-  a:hover {
-    background-color: hsla(160, 100%, 37%, 0.2);
-  }
+.sunnee-button:hover {
+  transform: translateY(-2px) scale(1.01);
+  filter: saturate(1.08);
+  box-shadow: 0 18px 30px rgba(11, 136, 173, 0.4);
 }
 
-@media (min-width: 1024px) {
-  body {
-    display: flex;
-    place-items: center;
-  }
+.sunnee-loader {
+  width: 2.2rem;
+  height: 2.2rem;
+  border-radius: 50%;
+  border: 4px solid rgba(8, 107, 137, 0.2);
+  border-top-color: var(--sn-accent);
+  animation: sunnee-spin 0.85s linear infinite;
+}
 
-  #app {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    padding: 0 2rem;
+@keyframes sunnee-spin {
+  to {
+    transform: rotate(360deg);
   }
 }

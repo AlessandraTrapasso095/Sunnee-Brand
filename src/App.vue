@@ -1,5 +1,121 @@
-<!-- questo file mi serve per fare da contenitore principale e mostrare la pagina corrente del router. -->
+<!-- questo file mi serve per gestire il layout globale con header, vista corrente e footer. -->
+<script setup>
+import sunneeLogo from './assets/images/sunnee-logo.svg'
+
+// questo blocco mi serve per mostrare l'anno corrente nel footer senza aggiornarlo a mano.
+const currentYear = new Date().getFullYear()
+</script>
+
 <template>
-  <!-- questo apre la vista attiva in base all'URL e la cambia quando l'utente naviga. -->
-  <RouterView />
+  <!-- questo blocco mi serve per contenere tutta l'app in un layout unico e riusabile. -->
+  <div class="app-shell">
+    <!-- questo blocco mi serve per avere il brand sempre visibile e il link rapido alla home. -->
+    <header class="site-header">
+      <RouterLink class="site-brand" to="/">
+        <img class="site-brand__logo" :src="sunneeLogo" alt="" aria-hidden="true" />
+        <span>Sunnee</span>
+      </RouterLink>
+      <RouterLink class="site-home-link" to="/">Home</RouterLink>
+    </header>
+
+    <!-- questo blocco mi serve per montare la pagina attiva del router. -->
+    <div class="app-content">
+      <RouterView />
+    </div>
+
+    <!-- questo blocco mi serve per chiudere ogni pagina con un footer coerente. -->
+    <footer class="site-footer">
+      <div class="site-footer__content">
+        <p>Sunnee {{ currentYear }}. Beachwear e accessori sostenibili.</p>
+      </div>
+    </footer>
+  </div>
 </template>
+
+<style scoped>
+.app-shell {
+  min-height: 100vh;
+  min-height: 100dvh;
+  display: flex;
+  flex-direction: column;
+}
+
+.site-header {
+  height: 64px;
+  padding: 0 clamp(1rem, 2.6vw, 2rem);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 1px solid rgba(7, 81, 105, 0.13);
+  background: rgba(249, 253, 255, 0.88);
+  backdrop-filter: blur(8px);
+}
+
+.site-brand {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: #06344a;
+  text-decoration: none;
+  font-weight: 800;
+  font-size: 1.2rem;
+  letter-spacing: 0.02em;
+}
+
+.site-brand__logo {
+  width: 42px;
+  height: 42px;
+  object-fit: contain;
+  display: block;
+}
+
+.site-home-link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  height: 2rem;
+  padding: 0 0.9rem;
+  border-radius: 999px;
+  border: 1px solid rgba(8, 107, 137, 0.25);
+  color: #0a5f7b;
+  text-decoration: none;
+  font-weight: 700;
+  font-size: 0.86rem;
+  background: rgba(255, 255, 255, 0.75);
+  transition: background-color 180ms ease, border-color 180ms ease, transform 180ms ease;
+}
+
+.site-home-link:hover {
+  background: #ffffff;
+  border-color: rgba(8, 107, 137, 0.42);
+  transform: translateY(-1px);
+}
+
+.app-content {
+  flex: 1;
+  min-height: 0;
+}
+
+.site-footer {
+  min-height: calc(44px + env(safe-area-inset-bottom));
+  border-top: 1px solid rgba(7, 81, 105, 0.1);
+  background: rgba(250, 253, 255, 0.92);
+  color: #40606d;
+  display: flex;
+  align-items: center;
+  padding-bottom: env(safe-area-inset-bottom);
+}
+
+.site-footer__content {
+  width: 100%;
+  margin: 0 auto;
+  padding: 0 clamp(1rem, 2.6vw, 2rem);
+}
+
+.site-footer__content p {
+  margin: 0;
+  font-size: 0.76rem;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+}
+</style>
